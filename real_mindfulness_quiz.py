@@ -63,7 +63,8 @@ def home():
     
     return render_template_string(quiz_template, result=None)
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True)
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=False)
+    port = int(os.environ.get("PORT", 5000))  # Use Render's assigned PORT
+    app.run(host="0.0.0.0", port=port, debug=False)
