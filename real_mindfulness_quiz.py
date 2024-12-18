@@ -70,19 +70,14 @@ quiz_template = """
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
-        # Calculate the score
         score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 8))
 
-        # Determine the result and PDF link
-        if score <= 6:
+        if score <= 5:
             result = "You are at the STARTING LINE. Small steps will make a big difference."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_0cdeb9323eca4413a4068ba95ca53031.pdf"
-        elif 7 <= score <= 8:
-            result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
+        elif 6 <= score <= 9:
+            result = "You are BUILDING MOMENTUM. You're on your way to growth and consistency."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_35f937935c4047bf8c3ae16e9f0307b7.pdf"
-        elif 9 <= score <= 11:
-            result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_0b5509e208034a57be546d14bdc43e93.pdf"
         else:
             result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_656b6736b6474552ac3e2b079cae732a.pdf"
