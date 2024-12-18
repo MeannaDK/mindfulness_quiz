@@ -74,23 +74,22 @@ def home():
 
         # Display results based on score
         # Display results based on score
-if score <= 6:
-    result = "You are at the STARTING LINE. Small steps will make a big difference."
-    pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_83bfdf29ccb442fab3ae8e0d7966b842.pdf"
+        # Display results based on score
+        if score <= 6:
+            result = "You are at the STARTING LINE. Small steps will make a big difference."
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_2f7a489fd6304e0f9eb48ea60cb38326.pdf"
 
-elif 7 <= score <= 8:
-    result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
-    pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_5106d62ea4e9464284439fbe3660aba4.pdf"
+        elif 7 <= score <= 8:
+            result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_5106d62ea4e9464284439fbe3660aba4.pdf"
 
-elif 9 <= score <= 11:
-    result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change."
-    pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_58cc8a3b9d27474b939317cd3c039b98.pdf"
+        elif 9 <= score <= 11:
+            result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change."
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_83bfdf29ccb442fab3ae8e0d7966b842.pdf"
 
-else:
-    result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace."
-    pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_2f7a489fd6304e0f9eb48ea60cb38326.pdf"
-
-        return render_template_string(quiz_template, result=result, pdf_link=pdf_link)
+        else:
+            result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace."
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_58cc8a3b9d27474b939317cd3c039b98.pdf"
 
     return render_template_string(quiz_template, result=None)
 
