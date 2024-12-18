@@ -76,9 +76,7 @@ def home():
             result = "You are at the STARTING LINE. Small steps will make a big difference."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_fd0d302e952e487dde7edeca9c16c91c.pdf"
         if score <= 6:
-    result = "You are at the STARTING LINE. Small steps will make a big difference."
-    pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_2f7a489fd6304e0f9eb48ea60cb38326.pdf"
-elif score <= 9:
+
     result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
     pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_5106d62ea4e9464284439fbe3660aba4.pdf"
 elif score <= 12:
