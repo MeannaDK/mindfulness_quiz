@@ -58,9 +58,9 @@ quiz_template = """
     </form>
 
     {% if result %}
-    <h2>Your Results Are In...</h2>
-    <p>{{ result }}</p>
-    <p><a href="{{ pdf_link }}" download>Click here to download your tracker</a></p>
+        <h2>Your Results Are In...</h2>
+        <p>{{ result }}</p>
+        <p><a href="{{ pdf_link }}" download>Click here to download your tracker</a></p>
     {% endif %}
 </body>
 </html>
@@ -71,14 +71,14 @@ def home():
     if request.method == "POST":
         # Calculate the score
         score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 8))
-        
-        # Determine the results
+
+        # Display results based on score
         if score <= 6:
             result = "You are at the STARTING LINE. Small steps will make a big difference."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_5106d62ea4e9464284439fbe3660aba4.pdf"
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_2f7a489fd6304e0f9eb48ea60cb38326.pdf"
         elif 7 <= score <= 8:
             result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_2f7a489fd6304e0f9eb48ea60cb38326.pdf"
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_5106d62ea4e9464284439fbe3660aba4.pdf"
         elif 9 <= score <= 11:
             result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_83bfdf29ccb442fab3ae8e0d7966b842.pdf"
@@ -87,7 +87,10 @@ def home():
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_58cc8a3b9d27474b939317cd3c039b98.pdf"
 
         return render_template_string(quiz_template, result=result, pdf_link=pdf_link)
-    return render_template_string(quiz_template)
+
+    return render_template_string(quiz_template, result=None)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get("PORT", 5000))  # Use Render's assigned PORT
+    app.run(host="0.0.0.0", port=port, debug=False)
