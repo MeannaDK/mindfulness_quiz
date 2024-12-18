@@ -61,7 +61,6 @@ quiz_template = """
     <h2>Your Results Are In...</h2>
     <p>{{ result }}</p>
     <p><a href="{{ pdf_link }}" download>Click here to download your tracker</a></p>
-    <p><strong>Want to take your mindfulness further? Check out our 'Mindfulness in 5' program and discover how just 5 minutes can help you achieve calm and balance.</strong></p>
     {% endif %}
 </body>
 </html>
