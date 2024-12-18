@@ -65,11 +65,6 @@ quiz_template = """
 </body>
 </html>
 """
-
-@app.route("/", methods=["GET", "POST"])
-def home():
-    if request.method == "POST":
-        # Calculate the score
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
