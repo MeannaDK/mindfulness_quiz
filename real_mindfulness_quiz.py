@@ -54,13 +54,30 @@ quiz_template = """
       <label><input type="radio" name="q7" value="3"> C) Occasionally</label><br>
       <label><input type="radio" name="q7" value="4"> D) Regularly</label><br><br>
 
+      <p>8. How often do you take time to intentionally unplug from distractions?</p>
+      <label><input type="radio" name="q8" value="1"> A) Never</label><br>
+      <label><input type="radio" name="q8" value="2"> B) Rarely</label><br>
+      <label><input type="radio" name="q8" value="3"> C) Occasionally</label><br>
+      <label><input type="radio" name="q8" value="4"> D) Regularly</label><br><br>
+
+      <p>9. How would you describe your current level of emotional awareness?</p>
+      <label><input type="radio" name="q9" value="1"> A) I avoid my emotions</label><br>
+      <label><input type="radio" name="q9" value="2"> B) I rarely process them</label><br>
+      <label><input type="radio" name="q9" value="3"> C) I try to stay aware</label><br>
+      <label><input type="radio" name="q9" value="4"> D) I process them fully</label><br><br>
+
+      <p>10. How often do you seek out new opportunities to grow?</p>
+      <label><input type="radio" name="q10" value="1"> A) Never</label><br>
+      <label><input type="radio" name="q10" value="2"> B) Rarely</label><br>
+      <label><input type="radio" name="q10" value="3"> C) Occasionally</label><br>
+      <label><input type="radio" name="q10" value="4"> D) Regularly</label><br><br>
+
       <input type="submit" value="Submit">
     </form>
 
     {% if result %}
     <h2>Your Results Are In...</h2>
     <p>{{ result }}</p>
-    <p><a href="{{ pdf_link }}" download>Click here to download your tracker</a></p>
     <p><strong>Want to take your mindfulness further? Check out our 'Mindfulness in 5' program and discover how just 5 minutes can help you achieve calm and balance.</strong></p>
     {% endif %}
 </body>
@@ -70,25 +87,16 @@ quiz_template = """
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
-        score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 8))
+        score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 11))
 
-        # Debugging logs
-        print(f"Debug: Total Score = {score}")
-
-        if score <= 6:
+        if score <= 10:
             result = "You are at the STARTING LINE. Small steps will make a big difference."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_35f937935c4047bf8c3ae16e9f0307b7.pdf"
-            print("Debug: Selected STARTING LINE")
-        elif 7 <= score <= 10:
-            result = "You are KEEPING UP MOMENTUM. Consistency is key to lasting change."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_0b5509e208034a57be546d14bdc43e93.pdf"
-            print("Debug: Selected KEEPING UP MOMENTUM")
+        elif 11 <= score <= 29:
+            result = "You are BUILDING MOMENTUM. Keep going, you're making progress."
         else:
             result = "You are THRIVING IN PLACE. Keep nurturing your journey to deeper peace."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_656b6736b6474552ac3e2b079cae732a.pdf"
-            print("Debug: Selected THRIVING IN PLACE")
 
-        return render_template_string(quiz_template, result=result, pdf_link=pdf_link)
+        return render_template_string(quiz_template, result=result)
 
     return render_template_string(quiz_template, result=None)
 
