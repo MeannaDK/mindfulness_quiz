@@ -61,6 +61,8 @@ quiz_template = """
         <h2>Your Results Are In...</h2>
         <p>{{ result }}</p>
         <p><a href="{{ pdf_link }}" download>Click here to download your tracker</a></p>
+        <p>Ready to bring more calm and clarity into your day?  
+        <a href="https://example.com/mindfulnessin5">Check out my Mindfulness in 5 program.</a></p>
     {% endif %}
 </body>
 </html>
@@ -72,19 +74,19 @@ def home():
         # Calculate the score
         score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 8))
 
-        # Display results based on score
+        # Determine results and PDF links
         if score <= 6:
-            result = "You are at the STARTING LINE. Small steps will make a big difference."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_2f7a489fd6304e0f9eb48ea60cb38326.pdf"
+            result = "You are at the STARTING LINE. Small steps make the biggest difference. Download your tracker to celebrate little wins and move forward!"
+            pdf_link = "https://9c4287_LittleWinsTracker.pdf"
         elif 7 <= score <= 8:
-            result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_5106d62ea4e9464284439fbe3660aba4.pdf"
+            result = "You are EXPLORING NEW POSSIBILITIES. You’re curious and ready to grow. Use the habits tracker to stay on your path."
+            pdf_link = "https://9c4287_MindfulHabitsTracker.pdf"
         elif 9 <= score <= 11:
-            result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_83bfdf29ccb442fab3ae8e0d7966b842.pdf"
+            result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change. Download the reflection checklist to stay grounded."
+            pdf_link = "https://9c4287_MindfulReflectionChecklist.pdf"
         else:
-            result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_58cc8a3b9d27474b939317cd3c039b98.pdf"
+            result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace. Use the contemplation checklist to maintain this harmony."
+            pdf_link = "https://9c4287_ContemplationChecklist.pdf"
 
         return render_template_string(quiz_template, result=result, pdf_link=pdf_link)
 
@@ -92,5 +94,5 @@ def home():
 
 if __name__ == "__main__":
     import os
-    port = int(os.environ.get("PORT", 5000))  # Use Render's assigned PORT
+    port = int(os.environ.get("PORT", 5000))  # Render's assigned port
     app.run(host="0.0.0.0", port=port, debug=False)
