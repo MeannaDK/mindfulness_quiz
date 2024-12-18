@@ -12,49 +12,49 @@ quiz_template = """
 <body>
     <h1>Welcome to Your Mindfulness Snapshot Quiz!</h1>
     <form method="POST">
-        <p>1. How often do you feel overwhelmed or stuck?</p>
-        <label><input type="radio" name="q1" value="1"> A) Almost always</label><br>
-        <label><input type="radio" name="q1" value="2"> B) Often</label><br>
-        <label><input type="radio" name="q1" value="3"> C) Sometimes</label><br>
-        <label><input type="radio" name="q1" value="4"> D) Rarely</label><br><br>
+      <p>1. How often do you feel overwhelmed or stuck?</p>
+      <label><input type="radio" name="q1" value="1"> A) Almost always</label><br>
+      <label><input type="radio" name="q1" value="2"> B) Often</label><br>
+      <label><input type="radio" name="q1" value="3"> C) Sometimes</label><br>
+      <label><input type="radio" name="q1" value="4"> D) Rarely</label><br><br>
 
-        <p>2. How consistent are you with practicing mindfulness or self-care?</p>
-        <label><input type="radio" name="q2" value="1"> A) Not consistent at all</label><br>
-        <label><input type="radio" name="q2" value="2"> B) Rarely</label><br>
-        <label><input type="radio" name="q2" value="3"> C) Occasionally</label><br>
-        <label><input type="radio" name="q2" value="4"> D) Very consistent</label><br><br>
+      <p>2. How consistent are you with practicing mindfulness or self-care?</p>
+      <label><input type="radio" name="q2" value="1"> A) Not consistent at all</label><br>
+      <label><input type="radio" name="q2" value="2"> B) Rarely</label><br>
+      <label><input type="radio" name="q2" value="3"> C) Occasionally</label><br>
+      <label><input type="radio" name="q2" value="4"> D) Very consistent</label><br><br>
 
-        <p>3. How important is it to you to make a lifestyle change?</p>
-        <label><input type="radio" name="q3" value="1"> A) Not important</label><br>
-        <label><input type="radio" name="q3" value="2"> B) Somewhat important</label><br>
-        <label><input type="radio" name="q3" value="3"> C) Very important</label><br>
-        <label><input type="radio" name="q3" value="4"> D) Extremely important</label><br><br>
+      <p>3. How important is it to you to make a lifestyle change?</p>
+      <label><input type="radio" name="q3" value="1"> A) Not important</label><br>
+      <label><input type="radio" name="q3" value="2"> B) Somewhat important</label><br>
+      <label><input type="radio" name="q3" value="3"> C) Very important</label><br>
+      <label><input type="radio" name="q3" value="4"> D) Extremely important</label><br><br>
 
-        <p>4. How prepared do you feel to take actionable steps toward your goals?</p>
-        <label><input type="radio" name="q4" value="1"> A) Never</label><br>
-        <label><input type="radio" name="q4" value="2"> B) Slightly prepared</label><br>
-        <label><input type="radio" name="q4" value="3"> C) Moderately prepared</label><br>
-        <label><input type="radio" name="q4" value="4"> D) Fully prepared</label><br><br>
+      <p>4. How prepared do you feel to take actionable steps toward your goals?</p>
+      <label><input type="radio" name="q4" value="1"> A) Never</label><br>
+      <label><input type="radio" name="q4" value="2"> B) Slightly prepared</label><br>
+      <label><input type="radio" name="q4" value="3"> C) Moderately prepared</label><br>
+      <label><input type="radio" name="q4" value="4"> D) Fully prepared</label><br><br>
 
-        <p>5. How often do you celebrate your wins, big or small?</p>
-        <label><input type="radio" name="q5" value="1"> A) Never</label><br>
-        <label><input type="radio" name="q5" value="2"> B) Rarely</label><br>
-        <label><input type="radio" name="q5" value="3"> C) Occasionally</label><br>
-        <label><input type="radio" name="q5" value="4"> D) Regularly</label><br><br>
+      <p>5. How often do you celebrate your wins, big or small?</p>
+      <label><input type="radio" name="q5" value="1"> A) Never</label><br>
+      <label><input type="radio" name="q5" value="2"> B) Rarely</label><br>
+      <label><input type="radio" name="q5" value="3"> C) Occasionally</label><br>
+      <label><input type="radio" name="q5" value="4"> D) Regularly</label><br><br>
 
-        <p>6. How connected do you feel to your core values?</p>
-        <label><input type="radio" name="q6" value="1"> A) Not connected</label><br>
-        <label><input type="radio" name="q6" value="2"> B) Slightly connected</label><br>
-        <label><input type="radio" name="q6" value="3"> C) Moderately connected</label><br>
-        <label><input type="radio" name="q6" value="4"> D) Deeply connected</label><br><br>
+      <p>6. How connected do you feel to your core values?</p>
+      <label><input type="radio" name="q6" value="1"> A) Not connected</label><br>
+      <label><input type="radio" name="q6" value="2"> B) Slightly connected</label><br>
+      <label><input type="radio" name="q6" value="3"> C) Moderately connected</label><br>
+      <label><input type="radio" name="q6" value="4"> D) Deeply connected</label><br><br>
 
-        <p>7. How often do you take time to pause and reflect on your progress?</p>
-        <label><input type="radio" name="q7" value="1"> A) Never</label><br>
-        <label><input type="radio" name="q7" value="2"> B) Rarely</label><br>
-        <label><input type="radio" name="q7" value="3"> C) Occasionally</label><br>
-        <label><input type="radio" name="q7" value="4"> D) Regularly</label><br><br>
+      <p>7. How often do you take time to pause and reflect on your progress?</p>
+      <label><input type="radio" name="q7" value="1"> A) Never</label><br>
+      <label><input type="radio" name="q7" value="2"> B) Rarely</label><br>
+      <label><input type="radio" name="q7" value="3"> C) Occasionally</label><br>
+      <label><input type="radio" name="q7" value="4"> D) Regularly</label><br><br>
 
-        <input type="submit" value="Submit">
+      <input type="submit" value="Submit">
     </form>
 
     {% if result %}
@@ -73,27 +73,22 @@ def home():
         score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 8))
 
         # Display results based on score
-        # Display results based on score
-        # Display results based on score
         if score <= 6:
             result = "You are at the STARTING LINE. Small steps will make a big difference."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_2f7a489fd6304e0f9eb48ea60cb38326.pdf"
-
         elif 7 <= score <= 8:
             result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_5106d62ea4e9464284439fbe3660aba4.pdf"
-
         elif 9 <= score <= 11:
             result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_83bfdf29ccb442fab3ae8e0d7966b842.pdf"
-
         else:
             result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_58cc8a3b9d27474b939317cd3c039b98.pdf"
 
-    return render_template_string(quiz_template, result=None)
+        return render_template_string(quiz_template, result=result, pdf_link=pdf_link)
+
+    return render_template_string(quiz_template)
 
 if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", 5000))  # Use Render's assigned PORT
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run(debug=True)
