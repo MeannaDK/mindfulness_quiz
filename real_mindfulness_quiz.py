@@ -11,29 +11,51 @@ quiz_template = """
 </head>
 <body>
     <h1>Welcome to Your Mindfulness Snapshot Quiz!</h1>
-    <form method="POST">
-        <p>1. How often do you feel overwhelmed or stuck?</p>
-        <label><input type="radio" name="q1" value="1"> A) Almost always</label><br>
-        <label><input type="radio" name="q1" value="2"> B) Often</label><br>
-        <label><input type="radio" name="q1" value="3"> C) Sometimes</label><br>
-        <label><input type="radio" name="q1" value="4"> D) Rarely</label><br>
+<form method="POST">
+  <p>1. How often do you feel overwhelmed or stuck?</p>
+  <label><input type="radio" name="q1" value="1"> A) Almost always</label><br>
+  <label><input type="radio" name="q1" value="2"> B) Often</label><br>
+  <label><input type="radio" name="q1" value="3"> C) Sometimes</label><br>
+  <label><input type="radio" name="q1" value="4"> D) Rarely</label><br><br>
 
-        <p>2. How consistent are you with practicing mindfulness or self-care?</p>
-        <label><input type="radio" name="q2" value="1"> A) Not consistent at all</label><br>
-        <label><input type="radio" name="q2" value="2"> B) Somewhat consistent</label><br>
-        <label><input type="radio" name="q2" value="3"> C) Mostly consistent</label><br>
-        <label><input type="radio" name="q2" value="4"> D) Very consistent</label><br>
+  <p>2. How consistent are you with practicing mindfulness or self-care?</p>
+  <label><input type="radio" name="q2" value="1"> A) Not consistent at all</label><br>
+  <label><input type="radio" name="q2" value="2"> B) Rarely</label><br>
+  <label><input type="radio" name="q2" value="3"> C) Occasionally</label><br>
+  <label><input type="radio" name="q2" value="4"> D) Very consistent</label><br><br>
 
-        <p>3. How important is it to you to make a lifestyle change?</p>
-        <label><input type="radio" name="q3" value="1"> A) Not important</label><br>
-        <label><input type="radio" name="q3" value="2"> B) Somewhat important</label><br>
-        <label><input type="radio" name="q3" value="3"> C) Very important</label><br>
-        <label><input type="radio" name="q3" value="4"> D) Extremely important</label><br>
+  <p>3. How important is it to you to make a lifestyle change?</p>
+  <label><input type="radio" name="q3" value="1"> A) Not important</label><br>
+  <label><input type="radio" name="q3" value="2"> B) Somewhat important</label><br>
+  <label><input type="radio" name="q3" value="3"> C) Very important</label><br>
+  <label><input type="radio" name="q3" value="4"> D) Extremely important</label><br><br>
 
-        <!-- Add more questions as needed -->
-        
-        <br><input type="submit" value="Submit">
-    </form>
+  <p>4. How prepared do you feel to take actionable steps toward your goals?</p>
+  <label><input type="radio" name="q4" value="1"> A) Never</label><br>
+  <label><input type="radio" name="q4" value="2"> B) Slightly prepared</label><br>
+  <label><input type="radio" name="q4" value="3"> C) Moderately prepared</label><br>
+  <label><input type="radio" name="q4" value="4"> D) Fully prepared</label><br><br>
+
+  <p>5. How often do you celebrate your wins, big or small?</p>
+  <label><input type="radio" name="q5" value="1"> A) Never</label><br>
+  <label><input type="radio" name="q5" value="2"> B) Rarely</label><br>
+  <label><input type="radio" name="q5" value="3"> C) Occasionally</label><br>
+  <label><input type="radio" name="q5" value="4"> D) Regularly</label><br><br>
+
+  <p>6. How connected do you feel to your core values?</p>
+  <label><input type="radio" name="q6" value="1"> A) Not connected</label><br>
+  <label><input type="radio" name="q6" value="2"> B) Slightly connected</label><br>
+  <label><input type="radio" name="q6" value="3"> C) Moderately connected</label><br>
+  <label><input type="radio" name="q6" value="4"> D) Deeply connected</label><br><br>
+
+  <p>7. How often do you take time to pause and reflect on your progress?</p>
+  <label><input type="radio" name="q7" value="1"> A) Never</label><br>
+  <label><input type="radio" name="q7" value="2"> B) Rarely</label><br>
+  <label><input type="radio" name="q7" value="3"> C) Occasionally</label><br>
+  <label><input type="radio" name="q7" value="4"> D) Regularly</label><br><br>
+
+  <input type="submit" value="Submit">
+</form>
 
     {% if result %}
     <h2>Your Results Are In...</h2>
