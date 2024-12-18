@@ -56,3 +56,7 @@ else:
     print("https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_79031ba3912c47ffa27570704eac8166.pdf")
 
 print("\nThank you for taking the quiz! Visit https://meannadk.com to access more tools and resources for your journey.")
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port)
