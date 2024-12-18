@@ -74,16 +74,16 @@ def home():
 
         if score <= 6:
             result = "You are at the STARTING LINE. Small steps will make a big difference."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_0cdeb9323eca4413a4068ba95ca53031.pdf"
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_0cdeb9323eca4413a4068ba95ca53031.pdf"  # Little Wins Tracker
         elif 7 <= score <= 8:
             result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_35f937935c4047bf8c3ae16e9f0307b7.pdf"
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_35f937935c4047bf8c3ae16e9f0307b7.pdf"  # Mindful Habits Tracker
         elif 9 <= score <= 11:
             result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_0b5509e208034a57be546d14bdc43e93.pdf"
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_0b5509e208034a57be546d14bdc43e93.pdf"  # Mindful Reflection Tracker
         else:
             result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace."
-            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_656b6736b6474552ac3e2b079cae732a.pdf"
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_656b6736b6474552ac3e2b079cae732a.pdf"  # 7-Day Habit Tracker
 
         return render_template_string(quiz_template, result=result, pdf_link=pdf_link)
 
