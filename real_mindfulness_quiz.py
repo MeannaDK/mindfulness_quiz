@@ -16,7 +16,14 @@ questions = [
 # Ask the questions and calculate the score
 for question in questions:
     print("\n" + question)
-    answer = input("Your answer (A/B/C/D): ").strip().upper()
+    answers = ["A", "B", "C", "D", "A", "B", "C"]  # Example fixed answers
+score = 0
+
+# Replace this loop
+for i, question in enumerate(questions):
+    print("\n", question)
+    answer = answers[i]  # Use pre-determined answers instead of input
+    print(f"Your answer: {answer}")
     if answer == "A":
         score += 1
     elif answer == "B":
@@ -25,9 +32,6 @@ for question in questions:
         score += 3
     elif answer == "D":
         score += 4
-    else:
-        print("Invalid input. Please enter A, B, C, or D next time.")
-
 # Display results based on score
 print("\nYour Results Are In...\n")
 
