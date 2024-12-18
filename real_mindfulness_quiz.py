@@ -47,8 +47,8 @@ quiz_template = """
 def home():
     if request.method == "POST":
         # Calculate the score
-        score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 4))
-        
+        score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 8))
+
         # Display results based on score
         if score <= 6:
             result = "You are at the STARTING LINE. Small steps will make a big difference."
