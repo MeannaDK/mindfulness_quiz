@@ -70,28 +70,29 @@ quiz_template = """
 def home():
     if request.method == "POST":
         # Calculate the score
+@app.route("/", methods=["GET", "POST"])
+def home():
+    if request.method == "POST":
+        # Calculate the score
         score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 8))
-
+        
         # Display results based on score
-       if score <= 6:
-    result = "You are at the STARTING LINE. Small steps will make a big difference."
-    pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_fd0d302e952e487d8e7eddeaca9163c6.pdf"
-elif score <= 9:
-    result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
-    pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_8d97081e4f6f4a14bfdb1a30758a8e70.pdf"
-elif score <= 12:
-    result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change."
-    pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_11968017ea9d4981b5d55c7d73a298ac.pdf"
-else:
-    result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace."
-    pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_79031ba3912c47ffa27570704eac8166.pdf"
+        if score <= 6:
+            result = "You are at the STARTING LINE. Small steps will make a big difference."
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_fd0d302e952e487dde7edeca9c16c91c.pdf"
+        elif score <= 9:
+            result = "You are EXPLORING NEW POSSIBILITIES. You're curious and ready to grow."
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_8d97081e4f641a4b1c6b1a38758a87e0.pdf"
+        elif score <= 12:
+            result = "You are BUILDING THE FOUNDATION. Consistency is key to lasting change."
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_119680712e9d4981b5d5c57d73e2992a.pdf"
+        else:
+            result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace."
+            pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_79031b3291a3747f1a257072804e8b5d.pdf"
 
-return render_template_string(quiz_template, result=result, pdf_link=pdf_link)
-
-        return render_template_string(quiz_template, result=result)
+        return render_template_string(quiz_template, result=result, pdf_link=pdf_link)
     
     return render_template_string(quiz_template, result=None)
-
 import os
 
 if __name__ == "__main__":
