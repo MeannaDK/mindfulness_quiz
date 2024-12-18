@@ -71,7 +71,7 @@ def home():
     if request.method == "POST":
         # Calculate the score
         score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 8))
-        
+
         # Display results based on score
         if score <= 6:
             result = "You are at the STARTING LINE. Small steps will make a big difference."
@@ -93,8 +93,7 @@ def home():
 
     return render_template_string(quiz_template, result=None)
 
-import os
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    import os
+    port = int(os.environ.get("PORT", 5000))  # Use Render's assigned PORT
     app.run(host="0.0.0.0", port=port, debug=False)
