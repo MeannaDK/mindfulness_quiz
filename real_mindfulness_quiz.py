@@ -71,6 +71,7 @@ quiz_template = """
 def home():
     if request.method == "POST":
         score = sum(int(request.form.get(f"q{i}", 0)) for i in range(1, 8))
+        print(f"DEBUG: Calculated score = {score}")  # Log the score
 
         if score <= 6:
             result = "You are at the STARTING LINE. Small steps will make a big difference."
@@ -85,6 +86,7 @@ def home():
             result = "You are THRIVING IN BALANCE. Keep nurturing your journey to deeper peace."
             pdf_link = "https://9c428778-7ec4-4d4f-b578-316e46ca64cb.usrfiles.com/ugd/9c4287_656b6736b6474552ac3e2b079cae732a.pdf"
 
+        print(f"DEBUG: Assigned result = {result}, PDF link = {pdf_link}")  # Log the result and link
         return render_template_string(quiz_template, result=result, pdf_link=pdf_link)
 
     return render_template_string(quiz_template, result=None)
